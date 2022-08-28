@@ -15,15 +15,16 @@ int main()
     int cnt = 0;
     for (int i = 0; i < 8; i++)
     {
-        int index = -1;
-        if (str.find(croatia[i]) != string::npos)
+        for (int j = 0; j < str.length(); j++)
         {
-            cnt++;
-            index = str.find(croatia[i]);
+            // cout << croatia[i] << endl;
+            if (str.find(croatia[i]) == string::npos)
+                break;
+            else if (str.find(croatia[i], j) <= j) {
+                cout << j << endl;
+                cnt++;
+            }
         }
-
-        if (str.find(croatia[i], index+1) != string::npos)
-            cnt++;
     }
 
     cout << cnt << endl;
