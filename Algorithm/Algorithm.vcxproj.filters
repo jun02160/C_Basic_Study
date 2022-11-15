@@ -69,5 +69,8 @@
     <ClCompile Include="이진 변환 반복하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="행렬의 곱셈.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

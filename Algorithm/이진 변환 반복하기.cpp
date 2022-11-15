@@ -1,55 +1,7 @@
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
 #include <string>
 #include <iostream>
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -81,12 +33,10 @@ vector<int> solution(string s) {
     while (true) {
         int len = deleteZero(s);  // len: 0 제거 후의 길이가 저장 / zero: 0의 개수만큼 추가
         zero += s.length() - len;
-        cout << "len: " << len << endl;
         count++;   // 이진 변환할 때마다 카운트 1씩 증가
         if (len == 1) break;
         s = toBinary(len);
-        cout << "s: " << s << endl;
-        cout << count << " " << zero << endl;
+
     }
 
     answer.push_back(count);
