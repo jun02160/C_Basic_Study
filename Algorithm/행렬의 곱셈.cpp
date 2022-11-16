@@ -32,3 +32,27 @@ vector<vector<int>> solution(vector<vector<int>> arr1, vector<vector<int>> arr2)
     // arr1의 첫 번째 배열[0][0], [0][1] - arr2의 모든 배열의 두 번쨰 인덱스 
     return answer;
 }
+
+vector<vector<int>> solution2(vector<vector<int>> arr1, vector<vector<int>> arr2) {
+    int Acol = arr1[0].size();
+    int Arow = arr1.size();
+    int Brow = arr2.size(); 
+    int Bcol = arr2[0].size();
+
+    // Acol == Brow  -> 곱셈한 결과의 행렬 크기  : Arow X Bcol
+
+    vector<vector<int>> answer(Arow, vector<int>(Bcol));
+
+    if (Acol == Brow) {
+        for (int i = 0; i < Arow; i++) {
+            for (int j = 0; j < Bcol; j++) {
+                answer[i][j] = 0;   // 0으로 초기화
+                for (int k = 0; k < Acol; k++) {
+                    answer[i][j] += arr1[i][k] * arr2[k][j];
+                }
+            }
+        }
+    }
+    return answer;
+
+}
