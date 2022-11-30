@@ -60,4 +60,5 @@ int solution(int n, int k) {
 
 int main() {
     cout << solution(3,3) << endl;
+    cout << solution(437674,3) << endl;
 }
